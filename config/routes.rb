@@ -1,6 +1,10 @@
 PushRails::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_scope :user do
+    get 'sign-in', to: 'devise/sessions#new', as: :new_session
+    get 'sign-out', to: 'devise/sessions#destroy', as: :destroy_session
+  end
 
   resources :welcome, only: [:index]
   root to: 'welcome#index'

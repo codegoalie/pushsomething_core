@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
 
     user
   end
+
+  def to_s
+    name
+  end
 end

@@ -7,6 +7,8 @@ gem 'rails', '~> 3.2.13'
 
 group :develpment, :test do
   gem 'rspec-rails'
+
+  gem 'awesome_print'
 end
 
 gem 'sqlite3'
@@ -15,6 +17,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 
+gem 'gcm'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

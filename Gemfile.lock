@@ -112,6 +112,9 @@ GEM
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
+    rabl-rails (0.3.3)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -191,6 +194,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   omniauth-google-oauth2
+  rabl-rails
   rails (~> 3.2.13)
   rspec-rails
   sass-rails (~> 3.2.3)

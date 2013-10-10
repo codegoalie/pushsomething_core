@@ -17,6 +17,7 @@ module PushRails
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths << "#{config.root}/app/classes"
     config.autoload_paths << "#{config.root}/app/service_objects"
 
     # Only load the plugins named here, in the order given (default is alphabetical).

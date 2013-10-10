@@ -1,3 +1,3 @@
-node :hello do
-  'world'
-end
+object :@receiver
+
+attributes :id

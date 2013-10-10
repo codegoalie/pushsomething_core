@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
+gem 'awesome_print'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,7 +9,6 @@ gem 'rails', '~> 3.2.13'
 group :develpment, :test do
   gem 'rspec-rails'
 
-  gem 'awesome_print'
 end
 
 gem 'sqlite3'
@@ -18,12 +18,14 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 
 gem 'gcm'
+gem 'jwt'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'haml-rails'
+  gem 'rabl-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

@@ -7,7 +7,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :receivers
+
   attr_accessible :name, :email, :password, :remember_me
+
+  validates :name, :email, presence: true
 
   def self.find_for_google_oauth2(access_token, signed_in_resource = nil)
     data = access_token.info
@@ -16,6 +20,18 @@ class User < ActiveRecord::Base
     unless user
       user = User.create(name: data['name'],
                          email: data['email'],
+                         password: Devise.friendly_token[0..20])
+    end
+
+    user
+  end
+
+  def self.find_or_create_by_email(email)
+    user = User.where(email: email).first
+
+    unless user
+      user = User.create(name: email,
+                         email: email,
                          password: Devise.friendly_token[0..20])
     end
 

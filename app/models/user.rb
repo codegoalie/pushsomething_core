@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :receivers
+
   attr_accessible :name, :email, :password, :remember_me
 
   def self.find_for_google_oauth2(access_token, signed_in_resource = nil)

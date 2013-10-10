@@ -26,6 +26,18 @@ class User < ActiveRecord::Base
     user
   end
 
+  def self.find_or_create_by_email(email)
+    user = User.where(email: email).first
+
+    unless user
+      user = User.create(name: email,
+                         email: email,
+                         password: Devise.friendly_token[0..20])
+    end
+
+    user
+  end
+
   def to_s
     name
   end

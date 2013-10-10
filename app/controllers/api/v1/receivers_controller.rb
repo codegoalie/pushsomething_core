@@ -3,6 +3,7 @@ class Api::V1::ReceiversController < ActionController::Base
   before_filter :verify_jwt
 
   def create
+    @user = User.find_or_create_by_email(@user_email)
   end
 
   private

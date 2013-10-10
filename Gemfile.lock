@@ -193,6 +193,7 @@ DEPENDENCIES
   gcm
   haml-rails
   jquery-rails
+  jwt
   omniauth-google-oauth2
   rabl-rails
   rails (~> 3.2.13)

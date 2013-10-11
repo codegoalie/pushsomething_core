@@ -1,13 +1,4 @@
 .row
   .twelve.columns
+    %h1 Welcome to PushSomething!!!
 
-    Hello!!!
-    %br
-
-    - unless signed_in?
-      = link_to 'Sign in with Google!',
-        user_omniauth_authorize_path(:google_oauth2)
-    - else
-      Welcome #{current_user}!!!
-      %br
-      = link_to 'Sign out', destroy_session_path

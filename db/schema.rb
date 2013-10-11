@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130908152548) do
+ActiveRecord::Schema.define(:version => 20131010124946) do
+
+  create_table "receivers", :force => true do |t|
+    t.string   "uid",        :null => false
+    t.integer  "user_id",    :null => false
+    t.string   "gcm_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "receivers", ["user_id", "uid"], :name => "index_receivers_on_user_id_and_uid", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "name",                :default => "", :null => false

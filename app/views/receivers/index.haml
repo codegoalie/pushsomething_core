@@ -1,0 +1,11 @@
+.row
+  .twelve.columns
+    %table
+      %thead
+        %th= Receiver.human_attribute_name :uid
+        %th= Receiver.human_attribute_name :gcm_id
+        %th= Receiver.human_attribute_name :updated_at
+        %th= Receiver.human_attribute_name :created_at
+      %tbody
+        = render @receivers
+

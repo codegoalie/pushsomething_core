@@ -2,8 +2,8 @@
 %html
   %head
     %title
-      - if content_for? :head
-        = yield :head
+      - if content_for? :title
+        = yield :title
         |
       PushSomething
 
@@ -11,4 +11,5 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
+    = render 'shared/top_bar'
     = yield

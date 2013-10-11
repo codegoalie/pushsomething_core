@@ -3,5 +3,8 @@
 
 en:
   welcome: Welcome to Push Something
-  first_notification: This is your first, of many,  notification. 
-                      Welcome to the club
+  first_notification: This is your first, of many, notifications. 
+                      Welcome to the club!
+  yes: Yes
+  no: No
+

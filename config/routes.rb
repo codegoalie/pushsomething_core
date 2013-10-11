@@ -6,6 +6,8 @@ PushRails::Application.routes.draw do
     get 'sign-out', to: 'devise/sessions#destroy', as: :destroy_session
   end
 
+  resources :receivers, only: [:index]
+
   namespace :api do
     namespace :v1 do
       resources :receivers, only: :create

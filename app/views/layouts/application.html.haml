@@ -3,7 +3,7 @@
   %head
     %title
       - if content_for? :title
-        = yield :title
+        = strip_tags yield :title
         |
       PushSomething
 
@@ -12,4 +12,9 @@
     = csrf_meta_tags
   %body
     = render 'shared/top_bar'
+    - if content_for? :title
+      #title-row
+        .row
+          .twelve.columns
+            = yield :title
     = yield

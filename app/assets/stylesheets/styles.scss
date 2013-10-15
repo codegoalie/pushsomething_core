@@ -1,8 +1,14 @@
 @import 'colors';
 
-body {
-  background-color: $backgroundColor;
+body { background-color: $backgroundColor; }
+nav.top-bar { margin-bottom:0px; }
+
+#title-row {
+  background-color: $fountainPen;
+  $textColor: $purpleBrushes;
+  color: $textColor;
+  h1 { color: $textColor; }
+
+  margin-bottom:1.5em;
 }
-h1, h2, h3, h4, h5, h6 {
-  color: $headerColor;
-}
+

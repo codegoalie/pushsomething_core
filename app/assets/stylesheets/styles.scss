@@ -1,0 +1,8 @@
+@import 'colors';
+
+body {
+  background-color: $backgroundColor;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: $headerColor;
+}

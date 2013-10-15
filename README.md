@@ -3,10 +3,13 @@
 This is the server side component to the PushSomething
 service.
 
-It will be responsible for:
+Features implemented:
 
 * Registering and authenticating users (via Google to start)
 * Storing and delivering push notifications to devices
+
+It will be responsible for:
+
 * Coordinating notification revocation for multi-device
   users.
 
@@ -15,3 +18,5 @@ It will be responsible for:
 
 * Omniauth - Oauth authentication
 * Figaro - clean application configuration
+* gcm - GCM push messages
+* Foundation - CSS framework

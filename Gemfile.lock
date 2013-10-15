@@ -95,6 +95,7 @@ GEM
     multi_json (1.7.9)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
+    mysql2 (0.3.11)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -194,6 +195,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jwt
+  mysql2
   omniauth-google-oauth2
   rabl-rails
   rails (~> 3.2.13)

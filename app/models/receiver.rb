@@ -4,4 +4,8 @@ class Receiver < ActiveRecord::Base
   has_and_belongs_to_many :notifications
 
   attr_accessible :uid, :user_id, :gcm_id
+
+  def to_s
+    uid
+  end
 end

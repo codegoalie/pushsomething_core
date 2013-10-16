@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010124946) do
+ActiveRecord::Schema.define(:version => 20131016021930) do
+
+  create_table "notifications", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "collapse_key"
+    t.datetime "created_at"
+  end
+
+  create_table "notifications_receivers", :force => true do |t|
+    t.integer "notification_id"
+    t.integer "receiver_id"
+  end
 
   create_table "receivers", :force => true do |t|
     t.string   "uid",        :null => false

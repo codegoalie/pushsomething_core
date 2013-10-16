@@ -7,6 +7,7 @@ PushRails::Application.routes.draw do
   end
 
   resources :receivers, only: [:index]
+  resources :notifications, only: [:index]
 
   namespace :api do
     namespace :v1 do

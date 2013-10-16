@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131016021930) do
+ActiveRecord::Schema.define(:version => 20131016175346) do
 
   create_table "notifications", :force => true do |t|
     t.string   "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20131016021930) do
     t.string   "gcm_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "nickname"
   end
 
   add_index "receivers", ["user_id", "uid"], :name => "index_receivers_on_user_id_and_uid", :unique => true

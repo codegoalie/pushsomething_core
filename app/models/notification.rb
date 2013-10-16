@@ -6,6 +6,12 @@ class Notification < ActiveRecord::Base
 
   after_create :send_notification
 
+  def self.for_user(user)
+    includes(:receivers).
+    joins(with_receivers).
+    where('notifications_receivers.receiver_id' => user.receivers)
+  end
+
   def self.to_user(user, title, body, collapse_key)
     self.create!(receivers: user.receivers,
                  title: title,
@@ -23,5 +29,13 @@ class Notification < ActiveRecord::Base
 
       gcm = GCM.new(ENV['GCM_KEY'])
       gcm.send_notification(registration_ids, payload)
+    end
+
+    def self.with_receivers
+      <<-SQL.strip_heredoc
+        JOIN notifications_receivers
+        ON notifications.id =
+           notifications_receivers.notification_id
+      SQL
     end
 end

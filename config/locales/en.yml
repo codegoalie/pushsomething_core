@@ -7,4 +7,16 @@ en:
                       Welcome to the club!
   yes: Yes
   no: No
+  time_ago: ! '%{phrase} ago'
+  date:
+    formats:
+      short: ! '%b %e, %Y'
+      month_day: ! '%m/%d'
+      ymd: ! '%Y%m%d'
+  time:
+    formats:
+      concise: ! '%m/%d/%Y %I:%M%p'
+      device_info_box: ! '%b %d %-I:%M %p'
+      short: ! '%b %-d, %Y %-I:%M%p'
+      sentence: ! '%B %d at %-I:%M%p'
 

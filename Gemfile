@@ -8,14 +8,14 @@ gem 'awesome_print'
 
 group :develpment, :test do
   gem 'rspec-rails'
-
+  gem 'sqlite3'
 end
 
-gem 'sqlite3'
+gem 'figaro'
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
-gem 'figaro'
+gem 'cancan'
 
 gem 'gcm'
 gem 'jwt'

@@ -1,0 +1,21 @@
+= content_for :title do
+  %h1 Notifications
+
+.row
+  .twleve.columns
+    %table
+      %thead
+        -# %th= Notification.human_attribute_name :source
+        %th= Notification.human_attribute_name :title
+        %th= Notification.human_attribute_name :body
+        %th= Notification.human_attribute_name :collapse_key
+        %th= Notification.human_attribute_name :created_at
+        %th= Notification.human_attribute_name :receivers
+      %tbody
+        - if @notifications.any?
+          = render @notifications
+        -else
+          %tr
+            %td.center{ colspan: 5 }
+              = t('no_notifications')
+

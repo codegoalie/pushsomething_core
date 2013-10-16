@@ -7,6 +7,7 @@ en:
                       Welcome to the club!
   yes: Yes
   no: No
+  no_notification: You have not received any notifications
   time_ago: ! '%{phrase} ago'
   date:
     formats:
@@ -19,4 +20,13 @@ en:
       device_info_box: ! '%b %d %-I:%M %p'
       short: ! '%b %-d, %Y %-I:%M%p'
       sentence: ! '%B %d at %-I:%M%p'
+  activerecord:
+    attributes:
+      notification:
+        source: Source
+        title: Title
+        body: Body
+        collapse_key: Collapse Key
+        created_at: Sent at
+        receivers: Sent to
 

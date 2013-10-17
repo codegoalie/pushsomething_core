@@ -17,4 +17,10 @@
         .row
           .twelve.columns
             = yield :title
+    - if flash.any?
+      .row
+        .eight.columns.centered
+          - flash.each do |severity, msg|
+            %div.alert-box{ class: severity }
+              = msg
     = yield

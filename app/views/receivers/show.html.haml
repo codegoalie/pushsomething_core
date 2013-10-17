@@ -1,0 +1,22 @@
+= content_for :title do
+  %h1= @receiver
+
+.row
+  .twelve.columns
+    = link_to t('receiver.back_to_index').html_safe,
+      receivers_path
+
+.row
+  .nine.columns
+    %dl
+      %dt= Receiver.human_attribute_name :nickname
+      %dd= @receiver.nickname
+
+      %dt= Receiver.human_attribute_name :uid
+      %dd= @receiver.uid
+
+      %dt= Receiver.human_attribute_name :gcm_id
+      %dd= @receiver.gcm_id
+
+  .three.columns
+    = link_to t('edit'), edit_receiver_path(@receiver), class: 'button'

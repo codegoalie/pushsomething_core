@@ -1,4 +1,5 @@
 %tr
+  %td= link_to receiver, receiver
   %td= receiver.uid
   %td= yes_no receiver.gcm_id.present?
   %td= time_ago_in_words receiver.updated_at

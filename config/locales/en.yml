@@ -29,4 +29,9 @@ en:
         collapse_key: Collapse Key
         created_at: Sent at
         receivers: Sent to
-
+      receiver:
+        nickname: Nickname
+        uid: Unique ID
+        gcm_id: GCM ID
+        created_at: Registered at
+        updated_at: Updated at

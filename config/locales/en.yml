@@ -7,6 +7,10 @@ en:
                       Welcome to the club!
   yes: Yes
   no: No
+  edit: Edit
+  save: Save
+  cancel: Cancel
+  correct_these_fields: 'Please correct the following fields and try again:'
   no_notification: You have not received any notifications
   time_ago: ! '%{phrase} ago'
   date:
@@ -35,3 +39,8 @@ en:
         gcm_id: GCM ID
         created_at: Registered at
         updated_at: Updated at
+  receiver:
+    invalid: Invalid Receiver
+    back_to_index: '&lt;- Back to Receivers'
+    update:
+      success: '%{name} updated'

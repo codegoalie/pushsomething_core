@@ -1,0 +1,8 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: push_something
+  host: localhost
+  pool: 5
+  username: 
+  password: 

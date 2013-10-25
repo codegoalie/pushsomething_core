@@ -8,6 +8,8 @@ PushRails::Application.routes.draw do
 
   resources :receivers, only: [:index, :show, :edit, :update]
   resources :notifications, only: [:index]
+  post '/notifications/send_test',
+       as: :send_test_notification
 
   namespace :api do
     namespace :v1 do

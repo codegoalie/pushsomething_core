@@ -1,7 +1,8 @@
 = content_for :title do
   %h1 Receivers
+
 .row
-  .twelve.columns
+  .eight.columns
     %table
       %thead
         %th= Receiver.human_attribute_name :nickname
@@ -12,3 +13,8 @@
       %tbody
         = render @receivers
 
+  .four.columns
+    = link_to t('test_notification.send_button'),
+              send_test_notification_path,
+              method: :post,
+              class: 'button'

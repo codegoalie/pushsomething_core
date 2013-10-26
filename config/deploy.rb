@@ -4,7 +4,7 @@ set :application, "push_something"
 set :repository,  "git@github.com:chrismar035/pushsomething_core.git"
 
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-set :branch, 'capify'
+set :branch, 'master'
 
 server '162.243.32.116', :web, :app, :db, primary: true
 set :user, 'rails'

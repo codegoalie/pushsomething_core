@@ -47,3 +47,4 @@ en:
   test_notification:
     default_title: Test Notification
     default_body: This is a test notification. Look like it worked!
+    success: Test notification sent. Check receivers to confirm.

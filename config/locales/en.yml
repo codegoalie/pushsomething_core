@@ -44,3 +44,6 @@ en:
     back_to_index: '&lt;- Back to Receivers'
     update:
       success: '%{name} updated'
+  test_notification:
+    default_title: Test Notification
+    default_body: This is a test notification. Look like it worked!

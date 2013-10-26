@@ -4,3 +4,4 @@
   %td= yes_no receiver.gcm_id.present?
   %td= time_ago_in_words receiver.updated_at
   %td= time_ago_in_words receiver.created_at
+  %td= link_to 'Send test notification', send_test_notification_path, method: :post

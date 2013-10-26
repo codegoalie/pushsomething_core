@@ -1,11 +1,12 @@
--# %td= notification.source
-%td= truncate notification.title
-%td= truncate notification.body
-%td= notification.collapse_key
-%td{ title: l(notification.created_at, format: :concise)}
-  = t('time_ago', phrase: time_ago_in_words(notification.created_at))
-%td
-  - notification.receivers.each do |receiver|
-    = link_to receiver, receivers_path
-    %br
+%tr
+  -# %td= notification.source
+  %td= truncate notification.title
+  %td= truncate notification.body
+  %td= notification.collapse_key
+  %td{ title: l(notification.created_at, format: :concise)}
+    = t('time_ago', phrase: time_ago_in_words(notification.created_at))
+  %td
+    - notification.receivers.each do |receiver|
+      = link_to receiver, receivers_path
+      %br
 

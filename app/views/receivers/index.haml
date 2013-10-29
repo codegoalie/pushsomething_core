@@ -15,6 +15,13 @@
 
   .four.columns
     = link_to t('test_notification.send_button'),
-              send_test_notification_path,
-              method: :post,
-              class: 'button'
+              '#',
+              class: 'button',
+              'data-reveal-id' => 'new_notification_modal'
+
+= content_for :modals do
+  #new_notification_modal.reveal-modal
+    %h2 Send a test notification
+    .form-content
+      =render 'notifications/form'
+    %a.close-reveal-modal &#215;

@@ -9,12 +9,15 @@ class NotificationsController < ApplicationController
     params[:title] ||= t('test_notification.default_title')
     params[:body] ||= t('test_notification.default_body')
 
-    Notification.to_user(current_user,
-                         params[:title],
-                         params[:body],
-                         'test_notification')
+    @notification = Notification.new(params[:notification])
+    @notification.user = current_user
 
-    flash[:success] = t('test_notification.success')
-    redirect_to :receivers
+    if @notification.save
+      flash[:success] = t('notification.success')
+      redirect_to :notifications
+    else
+      flash[:alert] = t('notification.failure')
+      render :new
+    end
   end
 end

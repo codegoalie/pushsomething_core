@@ -1,20 +1,30 @@
 class NotificationsController < ApplicationController
   authorize_resource
 
+  before_filter :set_default_notification_params, only: [:create]
+
   def index
     @notifications = Notification.for_user(current_user)
   end
 
-  def send_test
-    params[:title] ||= t('test_notification.default_title')
-    params[:body] ||= t('test_notification.default_body')
+  def create
+    @notification = Notification.new(params[:notification])
+    @notification.user = current_user
 
-    Notification.to_user(current_user,
-                         params[:title],
-                         params[:body],
-                         'test_notification')
-
-    flash[:success] = t('test_notification.success')
-    redirect_to :receivers
+    if @notification.save
+      flash[:success] = t('notification.success')
+      redirect_to :notifications
+    else
+      flash[:alert] = t('notification.failure')
+      render :new
+    end
   end
+
+  private
+
+    def set_default_notification_params
+      params[:notification][:title] ||= t('test_notification.default_title')
+      params[:notification][:body] ||= t('test_notification.default_body')
+      params[:notification][:collapse_key] ||= 'test_notification'
+    end
 end

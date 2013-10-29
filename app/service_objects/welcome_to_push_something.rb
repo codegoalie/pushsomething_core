@@ -1,10 +1,11 @@
 class WelcomeToPushSomething
   def self.call(user)
-    Notification.to_user(user,
-                         I18n.t('welcome'),
-                         I18n.t('first_notification'),
-                         'welcome_notification')
+    notification = Notification.new(title: I18n.t('welcome'),
+                                    body: I18n.t('first_notification'),
+                                    collapse_key: 'welcome_notification')
 
+    notification.user = user
+    notification.save!
 
     ReceiverMailer.first_timer(user).deliver
   end

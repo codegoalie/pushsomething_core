@@ -1,0 +1,17 @@
+- @notification ||= Notification.new
+= form_for @notification, remote: true do |f|
+  -if @notification.errors.any?
+    %h3= t('notification.invalid')
+    = t('correct_these_fields')
+    %ul.disc
+      - @notification.errors.full_messages.each do |msg|
+        %li= msg
+  %p
+    = f.label :title
+    = f.text_field :title
+    %br
+    = f.label :body
+    = f.text_area :body, rows: 3
+
+  %p
+    = f.submit t('save'), class: 'button'

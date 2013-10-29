@@ -9,7 +9,7 @@ class Api::V1::ReceiversController < ActionController::Base
     @receiver = FetchOrBuildReceiver.(params['uid'],
                                       params['gcm_id'],
                                       @user)
-    WelcomeToPushSomething.(@user)
+    WelcomeToPushSomething.(@user, @receiver)
   end
 
   private

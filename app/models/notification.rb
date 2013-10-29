@@ -2,7 +2,7 @@ class Notification < ActiveRecord::Base
 
   has_and_belongs_to_many :receivers
 
-  attr_accessible :title, :body, :collapse_key
+  attr_accessible :title, :body, :collapse_key, :receivers
   attr_writer :user
 
   validates :title, :body, presence: true

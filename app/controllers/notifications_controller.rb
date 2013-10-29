@@ -1,14 +1,13 @@
 class NotificationsController < ApplicationController
   authorize_resource
 
+  before_filter :set_default_notification_params, only: [:create]
+
   def index
     @notifications = Notification.for_user(current_user)
   end
 
-  def send_test
-    params[:title] ||= t('test_notification.default_title')
-    params[:body] ||= t('test_notification.default_body')
-
+  def create
     @notification = Notification.new(params[:notification])
     @notification.user = current_user
 
@@ -20,4 +19,12 @@ class NotificationsController < ApplicationController
       render :new
     end
   end
+
+  private
+
+    def set_default_notification_params
+      params[:notification][:title] ||= t('test_notification.default_title')
+      params[:notification][:body] ||= t('test_notification.default_body')
+      params[:notification][:collapse_key] ||= 'test_notification'
+    end
 end

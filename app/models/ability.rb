@@ -3,8 +3,7 @@ class Ability
 
   def initialize(user)
     can :manage, Receiver, user_id: user.id
-    can :read, Notification
-    can :send_test, Notification
+    can :manage, Notification
 
     # Define abilities for the passed in user here. For example:
     #

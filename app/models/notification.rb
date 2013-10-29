@@ -7,6 +7,8 @@ class Notification < ActiveRecord::Base
 
   after_create :send_notification
 
+  default_scope order('created_at DESC')
+
   def self.for_user(user)
     includes(:receivers).
     joins(with_receivers).

@@ -5,6 +5,8 @@ class Notification < ActiveRecord::Base
   attr_accessible :title, :body, :collapse_key
   attr_writer :user
 
+  validates :title, :body, presence: true
+
   after_create :send_notification
 
   default_scope order('created_at DESC')

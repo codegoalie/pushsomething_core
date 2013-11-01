@@ -1,4 +1,6 @@
 require 'bundler/capistrano'
+require './config/boot'
+require 'airbrake/capistrano'
 
 set :application, "push_something"
 set :repository,  "git@github.com:chrismar035/pushsomething_core.git"

@@ -35,4 +35,11 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.before :each do
+    tables = ActiveRecord::Base.connection.tables - %w{schema_migrations}
+    tables.each do |table_name|
+      ActiveRecord::Base.connection.execute "TRUNCATE TABLE #{table_name};"
+    end
+  end
 end

@@ -66,6 +66,11 @@ GEM
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     figaro (0.7.0)
@@ -220,6 +225,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   devise
+  factory_girl_rails
   figaro
   gcm
   haml-rails

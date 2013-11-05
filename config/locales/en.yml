@@ -39,8 +39,11 @@ en:
         gcm_id: GCM ID
         created_at: Registered at
         updated_at: Updated at
+  api:
+    auth_error: Authorization Error
   receiver:
     invalid: Invalid Receiver
+    unable_to_parse_jwt: Unable to parse JWT
     back_to_index: '&lt;- Back to Receivers'
     update:
       success: '%{name} updated'

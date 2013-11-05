@@ -50,7 +50,7 @@ describe Api::V1::ReceiversController do
         end
       end
 
-      context 'without valid a valid JWT' do
+      context 'without a valid JWT' do
         render_views
 
         let(:jwt) { JWT.encode('wrongdecoding', 'wrongsecret') }

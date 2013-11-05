@@ -11,6 +11,10 @@ group :test do
   gem 'rspec-rails'
 end
 
+group :development do
+  gem 'factory_girl_rails'
+end
+
 gem 'airbrake'
 gem 'figaro'
 

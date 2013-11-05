@@ -19,7 +19,7 @@ class Api::V1::ReceiversController < ActionController::Base
 
       if jwt['iss'] != 'accounts.google.com' &&
          jwt['aud'] != ENV['GOOGLE_ID']
-        render 'auth_error'
+        render 'auth_error', status: :unauthorized
       end
 
       @user_email = jwt['email']

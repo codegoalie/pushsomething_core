@@ -1,5 +1,5 @@
 class WelcomeToPushSomething
-  def self.call(user, reciever)
+  def self.call(user, receiver)
     Notification.create!(receivers: [receiver],
                          title: I18n.t('welcome'),
                          body: I18n.t('first_notification'),

@@ -1,6 +1,5 @@
 class Notification < ActiveRecord::Base
-
-  has_and_belongs_to_many :receivers
+  has_many :receivers, through: :notifications_recievers
 
   attr_accessible :title, :body, :collapse_key, :receivers
   attr_writer :user
@@ -12,9 +11,9 @@ class Notification < ActiveRecord::Base
   default_scope order('created_at DESC')
 
   def self.for_user(user)
-    includes(:receivers).
-    joins(with_receivers).
-    where('notifications_receivers.receiver_id' => user.receivers)
+    includes(:receivers)
+    .joins(with_receivers)
+    .where('notifications_receivers.receiver_id' => user.receivers)
   end
 
   def user=(user)

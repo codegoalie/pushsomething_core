@@ -1,15 +1,14 @@
 class Api::V1::ReceiversController < ActionController::Base
-
   before_filter :verify_params
   before_filter :verify_jwt
 
   def create
     @user = User.find_or_create_by_email(@user_email)
 
-    @receiver = FetchOrBuildReceiver.(params['uid'],
-                                      params['gcm_id'],
-                                      @user)
-    WelcomeToPushSomething.(@user, @receiver)
+    @receiver = FetchOrBuildReceiver.call(params['uid'],
+                                          params['gcm_id'],
+                                          @user)
+    WelcomeToPushSomething.call(@user, @receiver)
   end
 
   private

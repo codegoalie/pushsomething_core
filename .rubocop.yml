@@ -1,0 +1,14 @@
+AllCops:
+  Includes:
+    - Rakefile
+    - config.ru
+  Excludes:
+    - bin/**
+    - db/**
+    - config/**
+    - script/**
+
+Encoding:
+  Enabled: false
+Documentation:
+  Enabled: false

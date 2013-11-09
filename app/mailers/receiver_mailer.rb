@@ -6,4 +6,3 @@ class ReceiverMailer < ActionMailer::Base
     mail(to: @user.email, subject: I18n.t('welcome'))
   end
 end
-

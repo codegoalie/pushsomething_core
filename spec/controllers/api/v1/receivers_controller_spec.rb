@@ -27,15 +27,16 @@ describe Api::V1::ReceiversController do
         let(:found_user) { FactoryGirl.build(:user) }
         let(:jwt) { generate_jwt_token(found_user.email) }
 
-
         before do
-          allow(User).to receive(:find_or_create_by_email).and_return(found_user)
+          allow(User).to \
+            receive(:find_or_create_by_email).and_return(found_user)
         end
 
         after { post :create, register_params }
 
         it 'finds or creates a User' do
-          expect(User).to receive(:find_or_create_by_email).with(found_user.email)
+          expect(User).to \
+            receive(:find_or_create_by_email).with(found_user.email)
         end
 
         it 'finds or creates a Receiver' do

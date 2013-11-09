@@ -15,7 +15,8 @@ describe FetchOrBuildReceiver do
       let(:found_receiver) { FactoryGirl.build(:receiver) }
 
       it 'returns the existing reciever' do
-        expect(FetchOrBuildReceiver.call(uid, gcm_id, user)).to be found_receiver
+        expect(FetchOrBuildReceiver.call(uid, gcm_id, user)).to \
+          be found_receiver
       end
 
       it 'does not create a new receiver' do

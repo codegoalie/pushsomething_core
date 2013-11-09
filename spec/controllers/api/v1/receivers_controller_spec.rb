@@ -14,9 +14,9 @@ describe Api::V1::ReceiversController do
       let(:uid) { receiver.uid }
       let(:gcm_id) { receiver.gcm_id }
 
-      let(:register_params) { { jwt: jwt,
-                                uid: uid,
-                                gcm_id: gcm_id } }
+      let(:register_params) do
+        { jwt: jwt, uid: uid, gcm_id: gcm_id }
+      end
 
       before do
         allow(FetchOrBuildReceiver).to receive(:call).and_return(receiver)

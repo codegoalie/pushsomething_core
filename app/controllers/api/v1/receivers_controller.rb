@@ -6,10 +6,10 @@ class Api::V1::ReceiversController < ActionController::Base
   def create
     @user = User.find_or_create_by_email(@user_email)
 
-    @receiver = FetchOrBuildReceiver.(params['uid'],
+    @receiver = FetchOrBuildReceiver.call(params['uid'],
                                       params['gcm_id'],
                                       @user)
-    WelcomeToPushSomething.(@user, @receiver)
+    WelcomeToPushSomething.call(@user, @receiver)
   end
 
   private

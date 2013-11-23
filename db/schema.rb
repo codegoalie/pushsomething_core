@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131119033014) do
+ActiveRecord::Schema.define(:version => 20131123180512) do
 
   create_table "notifications", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.string   "collapse_key"
     t.datetime "created_at"
+    t.datetime "acknowledged_at"
+    t.integer  "acknowledger_id"
   end
 
   create_table "notifications_receivers", :force => true do |t|

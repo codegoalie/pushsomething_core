@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131016175346) do
+ActiveRecord::Schema.define(:version => 20131119033014) do
 
   create_table "notifications", :force => true do |t|
     t.string   "title"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20131016175346) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "nickname"
+    t.string   "auth_token"
   end
 
   add_index "receivers", ["user_id", "uid"], :name => "index_receivers_on_user_id_and_uid", :unique => true

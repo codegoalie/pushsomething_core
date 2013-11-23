@@ -1,3 +1,3 @@
 object :@receiver
 
-attributes :id
+attributes :id, :auth_token

@@ -1,5 +1,5 @@
 class Notification < ActiveRecord::Base
-  has_many :receivers, through: :notifications_recievers
+  has_and_belongs_to_many :receivers
 
   attr_accessible :title, :body, :collapse_key, :receivers
   attr_writer :user

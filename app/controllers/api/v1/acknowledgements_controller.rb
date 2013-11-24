@@ -1,0 +1,30 @@
+class Api::V1::AcknowledgementsController <  ActionController::Base
+  before_filter :authenticate_device_from_token!
+
+  def create
+    notification = Notification.for_user(@current_receiver.user)
+                               .where(id: params[:notification_id])
+                               .first
+
+    if notification
+      notification.acknowledge(@current_receiver)
+      render status: :ok
+    else
+      render status: :not_found
+    end
+  end
+
+  private
+
+    def authenticate_device_from_token!
+      uid = params[:uid].presence
+      receiver = uid && Receiver.where(uid: uid).first
+
+      if receiver && Devise.secure_compare(receiver.auth_token,
+                                           params[:auth_token])
+        @current_receiver = receiver
+      else
+        render json: {}, status: :unauthorized
+      end
+    end
+end

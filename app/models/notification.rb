@@ -25,9 +25,14 @@ class Notification < ActiveRecord::Base
     def send_notification
       registration_ids = receivers.pluck(:gcm_id)
 
-      payload = { data: { title: title, body: body },
-                  collapse_key: collapse_key }
+      payload = {
+                  data: {
+                          title: title,
+                          body: body
+                        }
+                }
 
+      payload[:collapse_key] = collapse_key if collapse_key
       gcm = GCM.new(ENV['GCM_KEY'])
       gcm.send_notification(registration_ids, payload)
     end

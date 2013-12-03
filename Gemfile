@@ -13,9 +13,11 @@ end
 
 group :development do
   gem 'factory_girl_rails'
+  gem 'thin'
 end
 
 gem 'airbrake'
+gem 'le'
 gem 'figaro'
 
 gem 'devise'

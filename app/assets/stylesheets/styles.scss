@@ -1,9 +1,9 @@
 @import 'colors';
 
-body { background-color: $backgroundColor; }
+body { background-color: $background-color; }
 nav.top-bar { margin-bottom:0px; }
 .center { text-align: center; }
-.alert-box.notice { background-color: $mechanicalPencil }
+.alert-box.notice { background-color: $mechanical-pencil }
 
 dl {
   dt {
@@ -19,12 +19,12 @@ dl {
 
 
 #title-row {
-  background-color: $fountainPen;
-  $textColor: $purpleBrushes;
-  color: $textColor;
-  h1 { color: $textColor; }
+  background-color: $fountain-pen;
+  $textColor: $purple-brushes;
+  color: $text-color;
+  h1 { color: $text-color; }
 
   margin-bottom:1.5em;
 }
 
-hr { border-color: $cheapBallPen; }
+hr { border-color: $cheap-ball-pen; }

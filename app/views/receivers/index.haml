@@ -2,7 +2,7 @@
   %h1 Receivers
 
 .row
-  .eight.columns
+  .small-8.columns
     %table
       %thead
         %th= Receiver.human_attribute_name :nickname
@@ -13,14 +13,14 @@
       %tbody
         = render @receivers
 
-  .four.columns
+  .small-4.columns
     = link_to t('test_notification.send_button'),
               '#',
               class: 'button',
               'data-reveal-id' => 'new_notification_modal'
 
 = content_for :modals do
-  #new_notification_modal.reveal-modal
+  #new_notification_modal.reveal-modal.small{' data-reveal' => '' }
     %h2 Send a test notification
     .form-content
       =render 'notifications/form'

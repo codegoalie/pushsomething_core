@@ -16,6 +16,7 @@ group :development do
 end
 
 gem 'airbrake'
+gem 'le'
 gem 'figaro'
 
 gem 'devise'

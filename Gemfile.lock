@@ -103,6 +103,7 @@ GEM
     jwt (0.1.8)
       multi_json (>= 1.5)
     kgio (2.8.1)
+    le (2.2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -222,6 +223,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jwt
+  le
   omniauth-google-oauth2
   pg
   rabl-rails

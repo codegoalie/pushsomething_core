@@ -20,7 +20,7 @@
               'data-reveal-id' => 'new_notification_modal'
 
 = content_for :modals do
-  #new_notification_modal.reveal-modal
+  #new_notification_modal.reveal-modal.small{' data-reveal' => '' }
     %h2 Send a test notification
     .form-content
       =render 'notifications/form'

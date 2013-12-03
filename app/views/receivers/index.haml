@@ -2,7 +2,7 @@
   %h1 Receivers
 
 .row
-  .eight.columns
+  .small-8.columns
     %table
       %thead
         %th= Receiver.human_attribute_name :nickname
@@ -13,7 +13,7 @@
       %tbody
         = render @receivers
 
-  .four.columns
+  .small-4.columns
     = link_to t('test_notification.send_button'),
               '#',
               class: 'button',

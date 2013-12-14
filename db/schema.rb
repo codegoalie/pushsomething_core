@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131123180512) do
+ActiveRecord::Schema.define(:version => 20131214133904) do
 
   create_table "notifications", :force => true do |t|
     t.string   "title"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(:version => 20131123180512) do
   end
 
   add_index "receivers", ["user_id", "uid"], :name => "index_receivers_on_user_id_and_uid", :unique => true
+
+  create_table "services", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "token",      :limit => 40
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name",                :default => "", :null => false

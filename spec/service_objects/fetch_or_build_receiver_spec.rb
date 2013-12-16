@@ -24,16 +24,16 @@ describe FetchOrBuildReceiver do
         FetchOrBuildReceiver.call(uid, gcm_id, user)
       end
     end
-  end
 
-  context 'when a receiver for the user with the UID does not exist' do
-    let(:found_receiver) { nil }
+    context 'when a receiver for the user with the UID does not exist' do
+      let(:found_receiver) { nil }
 
-    it 'creates a new receiver' do
-      expect(Receiver).to receive(:create).with(uid: uid,
-                                                gcm_id: gcm_id,
-                                                user_id: user.id)
+      it 'creates a new receiver' do
+        expect(Receiver).to receive(:create).with(uid: uid,
+                                                  gcm_id: gcm_id,
+                                                  user_id: user.id)
         FetchOrBuildReceiver.call(uid, gcm_id, user)
+      end
     end
   end
 end

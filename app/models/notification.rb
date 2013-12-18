@@ -11,6 +11,10 @@ class Notification < ActiveRecord::Base
 
   default_scope order('created_at DESC')
 
+  def self.find_for_user(user, id)
+    self.for_user(user).where(id: id).first
+  end
+
   def self.for_user(user)
     includes(:receivers)
     .joins(with_receivers)

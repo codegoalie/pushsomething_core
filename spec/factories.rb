@@ -10,4 +10,9 @@ FactoryGirl.define do
     gcm_id '54321'
     sequence(:nickname) { |n| "Recever #{n}" }
   end
+
+  factory :notification do
+    title 'title'
+    body 'body'
+  end
 end

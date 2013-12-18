@@ -12,6 +12,7 @@ PushRails::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :receivers, only: :create
+      resources :acknowledgements, only: :create
     end
   end
 

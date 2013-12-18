@@ -2,9 +2,8 @@ class Api::V1::AcknowledgementsController <  ActionController::Base
   before_filter :authenticate_device_from_token!
 
   def create
-    notification = Notification.for_user(@current_receiver.user)
-                               .where(id: params[:notification_id])
-                               .first
+    notification = Notification.find_for_user(@current_receiver.user,
+                                              params[:notification_id])
 
     if notification
       notification.acknowledge(@current_receiver)

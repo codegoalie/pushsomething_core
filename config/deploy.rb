@@ -2,6 +2,8 @@ require 'bundler/capistrano'
 require './config/boot'
 require 'airbrake/capistrano'
 
+logger = Logger.new(STDOUT)
+
 set :application, "push_something"
 set :repository,  "git@github.com:chrismar035/pushsomething_core.git"
 
@@ -42,7 +44,7 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
-    puts "Now edit the config files in #{shared_path}."
+    logger.info "Now edit the config files in #{shared_path}."
   end
   after "deploy:setup", "deploy:setup_config"
 

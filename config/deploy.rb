@@ -2,7 +2,6 @@ require 'bundler/capistrano'
 require './config/boot'
 require 'airbrake/capistrano'
 
-logger = Logger.new(STDOUT)
 
 set :application, 'push_something'
 set :repository,  'git@github.com:chrismar035/pushsomething_core.git'

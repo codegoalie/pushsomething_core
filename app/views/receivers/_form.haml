@@ -1,20 +1,19 @@
 = form_for @receiver do |f|
   .row
-    .eight.columns
+    .8.columns
       -if @receiver.errors.any?
         .row
-          .twelve.columns
+          .12.columns
             %h3= t('receiver.invalid')
             = t('correct_these_fields')
             %ul.disc
               - @receiver.errors.full_messages.each do |msg|
                 %li= msg
       .row
-        .three.columns
-          = f.label :nickname, class: 'right inline'
-        .nine.columns
-          = f.text_field :nickname, class: 'eight'
+        .large-3.columns
+          = f.label :nickname
+          = f.text_field :nickname
 
-    .four.columns
+    .4.columns
       = f.submit t('save'), class: 'button'
       = link_to t('cancel'), @receiver

@@ -7,6 +7,10 @@ class Service < ActiveRecord::Base
 
   validates :name, :user, presence: true
 
+  def to_s
+    name
+  end
+
   private
 
     def ensure_token_presence

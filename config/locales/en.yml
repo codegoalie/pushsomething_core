@@ -10,6 +10,7 @@ en:
   edit: Edit
   save: Save
   cancel: Cancel
+  delete: Delete
   correct_these_fields: 'Please correct the following fields and try again:'
   no_notification: You have not received any notifications
   time_ago: ! '%{phrase} ago'
@@ -55,3 +56,8 @@ en:
     default_title: Test Notification
     default_body: This is a test notification. Look like it worked!
     send_button: Send test notification to all receivers
+  service:
+    new: New Service
+    invalid: Service is not valid
+    confirm_delete: Are you sure that you would like to delete this
+      service?

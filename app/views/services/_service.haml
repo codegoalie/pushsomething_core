@@ -1,0 +1,4 @@
+%tr
+  %td= link_to service, edit_service_path(service)
+  %td= service.token
+  %td= time_ago_in_words service.created_at

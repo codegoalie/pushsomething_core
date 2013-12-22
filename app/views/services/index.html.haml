@@ -1,0 +1,17 @@
+= content_for :title do
+  %h1 Services
+
+.row
+  .small-8.columns
+    %table
+      %thead
+        %th= Service.human_attribute_name :name
+        %th= Service.human_attribute_name :token
+        %th= Service.human_attribute_name :created_at
+      %tbody
+        = render @services
+
+  .small-4.columns
+    = link_to t(:new, scope: [:service]),
+              new_service_path,
+              class: 'button'

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :receivers
+  has_many :services
 
   attr_accessible :name, :email, :password, :remember_me
 

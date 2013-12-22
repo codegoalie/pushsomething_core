@@ -1,0 +1,14 @@
+= content_for :title do
+  %h1 Edit #{@service}
+
+= render 'form'
+
+.row
+  .12.columns
+    %br
+    %br
+    %br
+    = link_to t(:delete),
+              service_path(@service),
+              confirm: t(:confirm_delete, scope: [:service]),
+              method: :delete

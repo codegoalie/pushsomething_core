@@ -8,11 +8,13 @@ PushRails::Application.routes.draw do
 
   resources :receivers, only: [:index, :show, :edit, :update]
   resources :notifications, only: [:index, :create]
+  resources :services
 
   namespace :api do
     namespace :v1 do
       resources :receivers, only: :create
       resources :acknowledgements, only: :create
+      resources :notifications, only: :create
     end
   end
 

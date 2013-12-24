@@ -52,6 +52,8 @@ class Notification < ActiveRecord::Base
 
       payload = {
                   data: {
+                          type: :notification,
+                          server_id: self.id,
                           title: title,
                           body: body
                         }

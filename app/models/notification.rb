@@ -23,10 +23,10 @@ class Notification < ActiveRecord::Base
     receivers << user.receivers
   end
 
-  def acknowledge(receiver)
+  def acknowledge!(receiver)
     return false if acknowledged_at
 
-    registration_ids = recievers.pluck(:gcm_id) - [reciever.gcm_id]
+    registration_ids = receivers.pluck(:gcm_id) - [receiver.gcm_id]
 
     payload = {
                 data: {
@@ -40,7 +40,7 @@ class Notification < ActiveRecord::Base
 
     self.acknowledged_at = Time.now
     self.acknowledger = receiver
-    self.save
+    self.save!
   end
 
   private

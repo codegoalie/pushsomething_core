@@ -6,7 +6,7 @@ class Api::V1::AcknowledgementsController <  ActionController::Base
                                               params[:notification_id])
 
     if notification
-      notification.acknowledge(@current_receiver)
+      notification.acknowledge!(@current_receiver)
       render json: {}, status: :ok
     else
       render json: {}, status: :not_found

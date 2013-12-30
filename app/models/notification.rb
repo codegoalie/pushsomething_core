@@ -13,6 +13,7 @@ class Notification < ActiveRecord::Base
 
   def self.find_for_user(user, id)
     notification = self.where(id: id).first
+    return nil unless notification
 
     return nil if (user.receivers & notification.receivers).empty?
 

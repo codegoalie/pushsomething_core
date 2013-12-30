@@ -1,6 +1,6 @@
 class Notification < ActiveRecord::Base
   has_and_belongs_to_many :receivers
-  has_one :acknowledger, class_name: 'Receiver'
+  belongs_to :acknowledger, class_name: 'Receiver'
 
   attr_accessible :title, :body, :collapse_key, :receivers
   attr_writer :user
@@ -12,23 +12,22 @@ class Notification < ActiveRecord::Base
   default_scope order('created_at DESC')
 
   def self.find_for_user(user, id)
-    self.for_user(user).where(id: id).first
-  end
+    notification = self.where(id: id).first
+    return nil unless notification
 
-  def self.for_user(user)
-    includes(:receivers)
-    .joins(with_receivers)
-    .where('notifications_receivers.receiver_id' => user.receivers)
+    return nil if (user.receivers & notification.receivers).empty?
+
+    notification
   end
 
   def user=(user)
     receivers << user.receivers
   end
 
-  def acknowledge(receiver)
+  def acknowledge!(receiver)
     return false if acknowledged_at
 
-    registration_ids = recievers.pluck(:gcm_id) - [reciever.gcm_id]
+    registration_ids = receivers.pluck(:gcm_id) - [receiver.gcm_id]
 
     payload = {
                 data: {
@@ -42,7 +41,7 @@ class Notification < ActiveRecord::Base
 
     self.acknowledged_at = Time.now
     self.acknowledger = receiver
-    self.save
+    self.save!
   end
 
   private
@@ -52,6 +51,8 @@ class Notification < ActiveRecord::Base
 
       payload = {
                   data: {
+                          type: :notification,
+                          server_id: self.id,
                           title: title,
                           body: body
                         }
@@ -60,13 +61,5 @@ class Notification < ActiveRecord::Base
       payload[:collapse_key] = collapse_key if collapse_key
       gcm = GCM.new(ENV['GCM_KEY'])
       gcm.send_notification(registration_ids, payload)
-    end
-
-    def self.with_receivers
-      <<-SQL.strip_heredoc
-        JOIN notifications_receivers
-        ON notifications.id =
-           notifications_receivers.notification_id
-      SQL
     end
 end

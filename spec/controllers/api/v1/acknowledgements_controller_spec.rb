@@ -17,7 +17,7 @@ describe Api::V1::AcknowledgementsController do
       Notification.stub_chain(:find_for_user)
                   .and_return(notification)
       Notification.any_instance
-                  .stub(:acknowledge)
+                  .stub(:acknowledge!)
                   .and_return(true)
     end
 
@@ -39,7 +39,7 @@ describe Api::V1::AcknowledgementsController do
       end
 
       it 'acknowledges the notification' do
-        expect(notification).to receive(:acknowledge).with(receiver)
+        expect(notification).to receive(:acknowledge!).with(receiver)
       end
     end
 

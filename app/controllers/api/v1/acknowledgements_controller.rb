@@ -1,5 +1,5 @@
 class Api::V1::AcknowledgementsController <  ActionController::Base
-  before_filter :authenticate_device_from_token!
+  before_filter :authenticate_receiver_from_token!
 
   def create
     notification = Notification.find_for_user(@current_receiver.user,
@@ -15,7 +15,7 @@ class Api::V1::AcknowledgementsController <  ActionController::Base
 
   private
 
-    def authenticate_device_from_token!
+    def authenticate_receiver_from_token!
       uid = params[:uid].presence
       receiver = uid && Receiver.where(uid: uid).first
 

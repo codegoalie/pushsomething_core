@@ -25,7 +25,10 @@ gem 'omniauth-google-oauth2'
 gem 'cancan'
 
 gem 'gcm'
-gem 'jwt'
+gem 'jwt',
+    '0.1.8',
+    git: 'git@github.com:progrium/ruby-jwt.git',
+    ref: '290af756efbf0fd39d9e2ba7e9f74f8716639320'
 
 gem 'haml-rails'
 gem 'jquery-rails'

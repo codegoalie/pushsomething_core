@@ -26,7 +26,7 @@ class Facebook::SubscriptionsController < ActionController::Base
 
   def updates
     @updates ||= \
-      Koala::Facebook::RealtimeUpdates.new(ENV['FACEBOOK_APP_ID'],
-                                           ENV['FACEBOOK_APP_SECRET'])
+      Koala::Facebook::RealtimeUpdates.new(app_id: ENV['FACEBOOK_APP_ID'],
+                                           secret: ENV['FACEBOOK_APP_SECRET'])
   end
 end

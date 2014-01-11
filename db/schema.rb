@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131214133904) do
+ActiveRecord::Schema.define(:version => 20140111114432) do
 
   create_table "notifications", :force => true do |t|
     t.string   "title"
@@ -48,12 +48,15 @@ ActiveRecord::Schema.define(:version => 20131214133904) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name",                :default => "", :null => false
-    t.string   "email",               :default => "", :null => false
-    t.string   "encrypted_password",  :default => "", :null => false
+    t.string   "name",                      :default => "", :null => false
+    t.string   "email",                     :default => "", :null => false
+    t.string   "encrypted_password",        :default => "", :null => false
     t.datetime "remember_created_at"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.integer  "facebook_uid"
+    t.string   "facebook_token"
+    t.integer  "facebook_token_expires_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

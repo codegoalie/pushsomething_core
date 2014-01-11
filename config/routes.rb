@@ -18,10 +18,6 @@ PushRails::Application.routes.draw do
     end
   end
 
-  namespace :facebook do
-    resources :subscriptions, only: [:index, :create, :destroy]
-    resources :callbacks, only: [:index, :create]
-  end
 
   resources :welcome, only: [:index]
   root to: 'welcome#index'

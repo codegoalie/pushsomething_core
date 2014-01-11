@@ -1,6 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
-    @user = User.find_for_google_oauth2(request.env['omniauth.auth'],
+    @user = User.find_for_google_oauth2(auth_hash,
                                         current_user)
 
     if @user.persisted?
@@ -9,8 +9,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       sign_in_and_redirect @user, event: :authentication
     else
-      session['devise.google_data'] = request.env['omniauth.auth']
+      session['devise.google_data'] = auth_hash
       redirect_to new_user_registration_url
     end
+  end
+
+  private
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 end

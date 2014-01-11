@@ -5,6 +5,6 @@ class WelcomeToPushSomething
                          body: I18n.t('first_notification'),
                          collapse_key: 'welcome_notification')
 
-    ReceiverMailer.first_timer(user).deliver
+    # ReceiverMailer.first_timer(user).deliver
   end
 end

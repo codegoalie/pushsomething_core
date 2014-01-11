@@ -7,6 +7,9 @@ class FacebookController < ApplicationController
 
   def fetch
     @fb.deliver
+
+    flash[:notice] = t(:success, scope: [:facebook])
+    redirect_to services_path
   end
 
   private

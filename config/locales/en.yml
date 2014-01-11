@@ -63,3 +63,4 @@ en:
       service?
   facebook:
     fetch: Fetch latest Facebook notifications
+    success: Latest Facebook notifications sent to receivers

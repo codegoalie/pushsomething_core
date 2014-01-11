@@ -137,6 +137,8 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
+    omniauth-facebook (1.5.1)
+      omniauth-oauth2 (~> 1.1.0)
     omniauth-google-oauth2 (0.2.2)
       omniauth (~> 1.0)
       omniauth-oauth2
@@ -238,6 +240,7 @@ DEPENDENCIES
   jquery-rails
   jwt (= 0.1.8)!
   le
+  omniauth-facebook
   omniauth-google-oauth2
   pg
   rabl-rails

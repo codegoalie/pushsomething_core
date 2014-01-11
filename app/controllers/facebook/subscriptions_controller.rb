@@ -12,6 +12,10 @@ class Facebook::SubscriptionsController < ActionController::Base
                       'notifications',
                       facebook_callback_url,
                       ENV['FACEBOOK_VERIFY'])
+
+    flash[:notice] = t(:success, scopes: [:subscriptions, :facebook])
+
+    redirect_to services_path
   end
 
   def destroy

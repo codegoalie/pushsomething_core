@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_many :receivers
   has_many :services
 
-  attr_accessible :name, :email, :password, :remember_me
+  attr_accessible :name, :email, :password, :remember_me,
+                  :facebook_uid, :facebook_token, :facebook_token_expires_at
 
   validates :name, :email, presence: true
 

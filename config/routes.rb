@@ -18,6 +18,10 @@ PushRails::Application.routes.draw do
     end
   end
 
+  namespace :facebook do
+    resources :subscriptions, only: [:index, :create, :destroy]
+  end
+
   resources :welcome, only: [:index]
   root to: 'welcome#index'
   # The priority is based upon order of creation:

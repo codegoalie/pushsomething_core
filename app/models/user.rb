@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   # devise :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
   devise :database_authenticatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
+         :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
 
   has_many :receivers
   has_many :services

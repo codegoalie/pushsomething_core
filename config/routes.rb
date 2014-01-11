@@ -18,6 +18,8 @@ PushRails::Application.routes.draw do
     end
   end
 
+  post '/facebook', to: 'facebook#fetch', as: :fetch_facebook
+  get '/facebook/show', to: 'facebook#show', as: :show_facebook
 
   resources :welcome, only: [:index]
   root to: 'welcome#index'

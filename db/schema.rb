@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140111114432) do
+ActiveRecord::Schema.define(:version => 20140111155724) do
 
   create_table "notifications", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20140111114432) do
     t.datetime "created_at"
     t.datetime "acknowledged_at"
     t.integer  "acknowledger_id"
+    t.string   "source"
+    t.string   "source_id"
   end
 
   create_table "notifications_receivers", :force => true do |t|

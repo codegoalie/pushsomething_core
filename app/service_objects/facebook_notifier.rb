@@ -13,17 +13,17 @@ class FacebookNotifier
     end
   end
 
-  def deliver(fb)
+  def deliver(fetched)
+    fb_notif = FacebookNotification.new(fetched)
+
     return if Notification.where(source: :facebook,
-                                 source_id: fetched['id']).exists?
+                                 source_id: fb_notif.id).exists?
 
     notification = Notification.new(receivers: @user.receivers,
-                                    title: fetched['title'],
-                                    body: fetched['title'],
+                                    title: fb_notif.title,
+                                    body: fb_notif.body,
                                     source: :facebook,
-                                    source_id: fetched['id'])
-
-    notification.body = fetched['object']['name'] if fetched['object']
+                                    source_id: fb_notif.id)
 
     unless notification.save
       Rails.logger.warn("FacebookNotifier: Failed to save notification\n " <<
@@ -32,6 +32,20 @@ class FacebookNotifier
   end
 
   private
+
+  class FacebookNotification
+    attr_reader :id, :title, :body
+
+    def initialize(raw_notification)
+      @id = raw_notification ['id']
+      @title = raw_notification['title']
+      @body = if raw_notification['object']
+                raw_notification['object']['name']
+              else
+                @title
+              end
+    end
+  end
 
   def graph
     @graph ||= Koala::Facebook::API.new(@user.facebook_token)

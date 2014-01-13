@@ -5,7 +5,7 @@ class FacebookController < ApplicationController
     render json: @fb.fetch
   end
 
-  def fetch
+  def create
     @fb.deliver
 
     flash[:notice] = t(:success, scope: [:facebook])

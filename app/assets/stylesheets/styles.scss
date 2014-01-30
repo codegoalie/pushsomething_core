@@ -28,3 +28,41 @@ dl {
 }
 
 hr { border-color: $cheap-ball-pen; }
+
+#welcome-row {
+  margin-top:-1.5em;
+  background-size: cover;
+  background: url('welcome-row.png');
+  height: 400px;
+  padding: 4em 0em;
+
+  h2 {
+    display: inline;
+    color: #222;
+    background-color: #fff;
+    padding: 5px 10px;
+  }
+  p {
+    margin-top: 2em;
+    font-size: 20pt;
+    color: #222;
+    background-color: #fff;
+    padding: 5px 10px;
+    em {
+      font-weight: bold;
+    }
+  }
+}
+
+#mobile-welcome-row {
+  color: $colour-crayon;
+  h2 {
+    color: $colour-crayon;
+  }
+  p em {
+    font-weight:bold;
+  }
+  background: $cheap-ball-pen;
+  margin-top:-1.5em;
+  padding: 1em 0;
+}

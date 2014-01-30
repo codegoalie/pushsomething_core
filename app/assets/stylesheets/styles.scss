@@ -29,6 +29,10 @@ dl {
 
 hr { border-color: $cheap-ball-pen; }
 
+@mixin welcome-row {
+  background-color: rgba(97, 99, 130, 0.7);
+  padding: 5px 10px;
+}
 #welcome-row {
   margin-top:-1.5em;
   background-size: cover;
@@ -38,16 +42,17 @@ hr { border-color: $cheap-ball-pen; }
 
   h2 {
     display: inline;
-    color: #222;
-    background-color: #fff;
-    padding: 5px 10px;
+    @include welcome-row;
+    color: $white;
+    font-weight: 500;
+    font-size: 30pt;
   }
   p {
+    @include welcome-row;
+    color: $black;
     margin-top: 2em;
+
     font-size: 20pt;
-    color: #222;
-    background-color: #fff;
-    padding: 5px 10px;
     em {
       font-weight: bold;
     }
@@ -55,14 +60,15 @@ hr { border-color: $cheap-ball-pen; }
 }
 
 #mobile-welcome-row {
-  color: $colour-crayon;
+  margin-top:-1.5em;
+  color: $black;
   h2 {
     color: $colour-crayon;
+    font-weight: 500;
   }
   p em {
     font-weight:bold;
   }
   background: $cheap-ball-pen;
-  margin-top:-1.5em;
   padding: 1em 0;
 }

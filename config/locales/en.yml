@@ -61,3 +61,6 @@ en:
     invalid: Service is not valid
     confirm_delete: Are you sure that you would like to delete this
       service?
+  facebook:
+    fetch: Fetch latest Facebook notifications
+    success: Latest Facebook notifications sent to receivers

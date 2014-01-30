@@ -5,12 +5,13 @@ class User < ActiveRecord::Base
   # devise :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
   devise :database_authenticatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
+         :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
 
   has_many :receivers
   has_many :services
 
-  attr_accessible :name, :email, :password, :remember_me
+  attr_accessible :name, :email, :password, :remember_me,
+                  :facebook_uid, :facebook_token, :facebook_token_expires_at
 
   validates :name, :email, presence: true
 

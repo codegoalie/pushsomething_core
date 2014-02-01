@@ -10,7 +10,7 @@ class Notification < ActiveRecord::Base
     joins(:receivers).where('receivers.id' => user.receivers)
                      .group('notifications.id')
   end
-  default_scope order('notifications.created_at DESC')
+  default_scope -> { order('notifications.created_at DESC') }
 
   def self.find_for_user(user, id)
     notification = self.where(id: id).first

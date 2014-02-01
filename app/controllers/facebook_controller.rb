@@ -6,7 +6,7 @@ class FacebookController < ApplicationController
   end
 
   def create
-    @fb.deliver
+    @fb.deliver_all
 
     flash[:notice] = t(:success, scope: [:facebook])
     redirect_to services_path

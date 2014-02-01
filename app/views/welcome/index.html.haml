@@ -22,7 +22,7 @@
         %em wherever you are
 
 .row
-  .small-4.columns
+  .large-4.columns
     %h3.text-center
       Where you are
     %p.text-justify
@@ -31,7 +31,7 @@
       the notification.
       .bold
         Only see a notification once no matter where you see it first.
-  .small-4.columns
+  .large-4.columns
     %h3.text-center
       Your favorite services
     %ul.disc
@@ -47,7 +47,7 @@
       Plus, with our RESTful API
       %em anything
       that can talk to the web, can send you notifications!
-  .small-4.columns
+  .large-4.columns
     %h3.text-center
       Historical
     %p.text-justify
@@ -57,7 +57,7 @@
 
 %hr
 .row
-  .small-8.columns.large-centered.text-center
+  .small-8.columns.small-centered.large-centered.text-center
     %h3 Ready to get started?
     = link_to user_omniauth_authorize_path(:google_oauth2) do
       .large.button#sign-in-callout

@@ -34,7 +34,7 @@ class FacebookNotifier
   private
 
   class FacebookNotification
-    attr_reader :id, :title, :body
+    attr_reader :id, :title, :body, :icon_url
 
     def initialize(raw_notification)
       @id = raw_notification ['id']
@@ -44,6 +44,9 @@ class FacebookNotifier
               else
                 @title
               end
+      # @icon_url = something with the raw_notification['from']
+      # 'from' can either be a User or Page or App. If user, can get
+      # user's pic. Not sure about app or pages... Maybe use facebook icon.
     end
   end
 

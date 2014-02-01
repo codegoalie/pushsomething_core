@@ -14,4 +14,15 @@
   .small-4.columns
     = link_to t(:new, scope: [:service]),
               new_service_path,
-              class: 'button'
+              class: :button
+    %br
+    - if current_user.facebook_uid.present?
+      = link_to t(:create, scope: [:facebook]),
+                create_facebook_path,
+                method: 'POST',
+                class: :button
+    - else
+      = link_to t(:connect, scope: [:facebook]),
+                user_omniauth_authorize_path(:facebook),
+                class: :button
+

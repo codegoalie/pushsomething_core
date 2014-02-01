@@ -64,6 +64,7 @@ en:
   facebook:
     fetch: Fetch latest Facebook notifications
     success: Latest Facebook notifications sent to receivers
+    connect: Connect to facebook to receive your notifications
   topbar:
     signout: Sign out
     signin: Sign in with Google!

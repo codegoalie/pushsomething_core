@@ -17,7 +17,7 @@
               class: :button
     %br
     - if current_user.facebook_uid.present?
-      = link_to t(:create, scope: [:facebook]),
+      = link_to t(:fetch, scope: [:facebook]),
                 create_facebook_path,
                 method: 'POST',
                 class: :button

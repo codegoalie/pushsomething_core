@@ -1,5 +1,9 @@
 @import 'colors';
 
+.bold {
+  font-weight:500;
+}
+
 body { background-color: $background-color; }
 nav.top-bar { margin-bottom:0px; }
 .center { text-align: center; }
@@ -35,6 +39,7 @@ hr { border-color: $cheap-ball-pen; }
 }
 #welcome-row {
   margin-top:-1.5em;
+  margin-bottom: 1em;
   background-size: cover;
   background: url('welcome-row.png');
   height: 400px;
@@ -71,4 +76,16 @@ hr { border-color: $cheap-ball-pen; }
   }
   background: $cheap-ball-pen;
   padding: 1em 0;
+}
+
+#sign-in-callout  h1 {
+  color: $purple-brushes;
+}
+
+footer {
+  margin-top:2em;
+  padding-top: 1em;
+  padding-bottom:2em;
+  background-color:$black;
+  color: $white;
 }

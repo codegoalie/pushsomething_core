@@ -64,3 +64,11 @@ en:
   facebook:
     fetch: Fetch latest Facebook notifications
     success: Latest Facebook notifications sent to receivers
+  topbar:
+    signout: Sign out
+    signin: Sign in with Google!
+    notifications: Notifications
+    receivers: Receivers
+    services: Services
+  footer:
+    copyright: Copyright

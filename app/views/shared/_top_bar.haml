@@ -8,13 +8,13 @@
         - if signed_in?
           %li= link_to current_user
           %li.divider
-          %li= link_to 'Sign out', destroy_session_path
+          %li= link_to t(:signout, scope: [:topbar]), destroy_session_path
         - else
-          %li= link_to 'Sign in with Google!',
+          %li= link_to t(:signin, scope: [:topbar]),
             user_omniauth_authorize_path(:google_oauth2)
     - if signed_in?
       %section.top-bar-section
         %ul.left
-          %li= link_to 'Receivers', receivers_path
-          %li= link_to 'Notifications', notifications_path
-          %li= link_to 'Services', services_path
+          %li= link_to t(:receivers, scope: [:topbar]), receivers_path
+          %li= link_to t(:notifications, scope: [:topbar]), notifications_path
+          %li= link_to t(:services, scope: [:topbar]), services_path

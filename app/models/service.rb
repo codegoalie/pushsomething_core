@@ -3,8 +3,6 @@ class Service < ActiveRecord::Base
 
   before_create :ensure_token_presence
 
-  attr_accessible :name
-
   validates :name, :user, presence: true
 
   def to_s

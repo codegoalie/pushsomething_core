@@ -2,9 +2,6 @@ class Notification < ActiveRecord::Base
   has_and_belongs_to_many :receivers
   belongs_to :acknowledger, class_name: 'Receiver'
 
-  attr_accessible :title, :body, :collapse_key, :receivers, :source, :source_id
-  attr_writer :user
-
   validates :title, :body, presence: true
 
   after_create :send_notification
@@ -13,7 +10,7 @@ class Notification < ActiveRecord::Base
     joins(:receivers).where('receivers.id' => user.receivers)
                      .group('notifications.id')
   end
-  default_scope order('notifications.created_at DESC')
+  default_scope -> { order('notifications.created_at DESC') }
 
   def self.find_for_user(user, id)
     notification = self.where(id: id).first

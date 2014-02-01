@@ -11,7 +11,7 @@ class ServicesController < ApplicationController
   end
 
   def update
-    if @service.update_attributes(params[:service])
+    if @service.update_attributes(service_params)
       redirect_to services_path
     else
       render :edit
@@ -34,5 +34,11 @@ class ServicesController < ApplicationController
     @service.delete
 
     redirect_to services_path
+  end
+
+  private
+
+  def service_params
+    params.require(:service).permit(:name)
   end
 end

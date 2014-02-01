@@ -10,9 +10,6 @@ class User < ActiveRecord::Base
   has_many :receivers
   has_many :services
 
-  attr_accessible :name, :email, :password, :remember_me,
-                  :facebook_uid, :facebook_token, :facebook_token_expires_at
-
   validates :name, :email, presence: true
 
   def self.find_for_google_oauth2(access_token, signed_in_resource = nil)

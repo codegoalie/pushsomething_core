@@ -11,11 +11,17 @@ class ReceiversController < ApplicationController
   end
 
   def update
-    if @receiver.update_attributes(params[:receiver])
+    if @receiver.update_attributes(receiver_params)
       flash[:success] = t('receiver.update.success', name: @receiver)
       redirect_to @receiver
     else
       render :edit
     end
+  end
+
+  private
+
+  def receiver_params
+    params.require(:receiver).permit(:nickname)
   end
 end

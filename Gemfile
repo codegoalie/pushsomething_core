@@ -37,12 +37,10 @@ gem 'koala', '~> 1.8.0rc1'
 gem 'haml-rails'
 gem 'jquery-rails'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'rabl-rails'
+gem 'sass-rails',   '~> 3.2.3'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'rabl-rails'
 
-  gem 'uglifier', '>= 1.0.3'
-  gem 'compass-rails'
-  gem 'foundation-rails'
-end
+gem 'uglifier', '>= 1.0.3'
+gem 'compass-rails'
+gem 'foundation-rails'

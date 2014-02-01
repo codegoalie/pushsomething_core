@@ -4,8 +4,6 @@ class Receiver < ActiveRecord::Base
 
   before_save :ensure_auth_token
 
-  attr_accessible :nickname, :uid, :user_id, :gcm_id
-
   def to_s
     nickname || uid
   end

@@ -35,6 +35,7 @@ hr { border-color: $cheap-ball-pen; }
 }
 #welcome-row {
   margin-top:-1.5em;
+  margin-bottom: 1em;
   background-size: cover;
   background: url('welcome-row.png');
   height: 400px;
@@ -71,4 +72,8 @@ hr { border-color: $cheap-ball-pen; }
   }
   background: $cheap-ball-pen;
   padding: 1em 0;
+}
+
+#sign-in-callout  h1 {
+  color: $purple-brushes;
 }

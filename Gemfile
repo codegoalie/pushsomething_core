@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '~> 4.0.0'
 gem 'awesome_print'
 gem 'capistrano', '~> 2.0'
 
@@ -36,11 +36,11 @@ gem 'koala', '~> 1.8.0rc1'
 
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'rabl'
 
-gem 'sass-rails',   '~> 3.2.3'
-gem 'coffee-rails', '~> 3.2.1'
-gem 'rabl-rails'
+gem 'sass-rails'
+gem 'coffee-rails'
 
-gem 'uglifier', '>= 1.0.3'
+gem 'uglifier'
 gem 'compass-rails'
 gem 'foundation-rails'

@@ -8,7 +8,7 @@ class NotificationsController < ApplicationController
   end
 
   def create
-    @notification = Notification.new(params[:notification])
+    @notification = Notification.new(notification_params)
     @notification.user = current_user
 
     if @notification.save
@@ -23,7 +23,8 @@ class NotificationsController < ApplicationController
   private
 
     def notification_params
-      params.require(:notification).permit(:title, :body, :collapse_key)
+      params.require(:notification)
+            .permit(:title, :body, :collapse_key, :remote_icon)
     end
 
     def set_default_notification_params

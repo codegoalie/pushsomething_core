@@ -23,7 +23,8 @@ class FacebookNotifier
                                     title: fb_notif.title,
                                     body: fb_notif.body,
                                     source: :facebook,
-                                    source_id: fb_notif.id)
+                                    source_id: fb_notif.id,
+                                    remote_icon: icon_url)
 
     unless notification.save
       Rails.logger.warn("FacebookNotifier: Failed to save notification\n " <<
@@ -45,6 +46,10 @@ class FacebookNotifier
                 @title
               end
     end
+  end
+
+  def icon_url
+    "http://graph.facebook.com/#{@user.facebook_uid}/picture?type=large"
   end
 
   def graph

@@ -34,6 +34,7 @@ en:
         collapse_key: Collapse Key
         created_at: Sent at
         receivers: Sent to
+        remote_icon: Icon URL
       receiver:
         nickname: Nickname
         uid: Unique ID

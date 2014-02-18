@@ -58,8 +58,11 @@ class Notification < ActiveRecord::Base
                           body: body
                         }
                 }
-
+      payload[:data][:source] = source if source.present?
+      payload[:data][:source_id] = source_id if source_id.present?
+      payload[:data][:remote_icon] = remote_icon if remote_icon.present?
       payload[:collapse_key] = collapse_key if collapse_key
+
       gcm = GCM.new(ENV['GCM_KEY'])
       gcm.send_notification(registration_ids, payload)
     end

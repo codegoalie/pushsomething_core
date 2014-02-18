@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111155724) do
+ActiveRecord::Schema.define(version: 20140218041034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140111155724) do
     t.integer  "acknowledger_id"
     t.string   "source"
     t.string   "source_id"
+    t.string   "remote_icon"
   end
 
   create_table "notifications_receivers", force: true do |t|

@@ -22,6 +22,10 @@ class NotificationsController < ApplicationController
 
   private
 
+    def notification_params
+      params.require(:notification).permit(:title, :body, :collapse_key)
+    end
+
     def set_default_notification_params
       params[:notification][:title] ||= t('test_notification.default_title')
       params[:notification][:body] ||= t('test_notification.default_body')

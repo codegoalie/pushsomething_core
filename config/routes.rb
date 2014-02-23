@@ -21,7 +21,7 @@ PushRails::Application.routes.draw do
   post '/facebook', to: 'facebook#create', as: :create_facebook
   get '/facebook/show', to: 'facebook#show', as: :show_facebook
 
-  resources :welcome, only: [:index]
+  resources :welcome, only: [:index, :closed_registration]
   root to: 'welcome#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

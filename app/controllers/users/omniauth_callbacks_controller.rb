@@ -3,6 +3,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_for_google_oauth2(auth_hash,
                                         current_user)
 
+    unless @user
+      redirect_to closed_registration_welcome_path
+      return
+    end
+
     if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success',
                               kind: 'Google')

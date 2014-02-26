@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
   load_and_authorize_resource
+  skip_load_resource only: :create
 
   def index; end
   def show; end
@@ -19,6 +20,7 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
+    @service.user = current_user
 
     if @service.save
       redirect_to services_path

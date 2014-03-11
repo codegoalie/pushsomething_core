@@ -1,0 +1,20 @@
+= content_for :title do
+  %h1 Docs
+
+.row
+  .small-12.columns
+    %dl.tabs.vertical{ :'data-tab' => true }
+      %dd.active= link_to t(:getting_started, scope: [:docs]), '#gettingStarted'
+      %dd= link_to t(:api, scope: [:docs]), '#api'
+    .tabs-content.vertical#documentation
+      .content.active#gettingStarted
+        %h2
+          Welcome
+          %small Here's what to do
+      .content#api
+        %h2 Service API
+        %p
+          Services are external systems, or apps, which communicate with
+          PushSomething for the purpose of posting notifications to devices.
+          The service API allows already registered services to create
+          notifications with an HTTP POST as described below.

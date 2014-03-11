@@ -74,3 +74,6 @@ en:
     services: Services
   footer:
     copyright: Copyright
+  docs:
+    getting_started: Getting Started
+    api: API

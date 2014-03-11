@@ -5,9 +5,9 @@
         %h1= link_to 'PushSomething', root_path
     %section.top-bar-section
       %ul.right
+        %li= link_to t(:docs, scope: [:topbar]), docs_path
+        %li.divider
         - if signed_in?
-          %li= link_to current_user
-          %li.divider
           %li= link_to t(:signout, scope: [:topbar]), destroy_session_path
         - else
           %li= link_to t(:signin, scope: [:topbar]),

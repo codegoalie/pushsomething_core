@@ -72,6 +72,7 @@ en:
     notifications: Notifications
     receivers: Receivers
     services: Services
+    docs: Docs
   footer:
     copyright: Copyright
   docs:

@@ -11,6 +11,50 @@
         %h2
           Welcome
           %small Here's what to do
+
+        %ol
+          %li
+            Download the app.
+            .panel
+              Because we are still in Beta, please sign up for our
+              = link_to 'Google+ Community',
+                        'https://plus.google.com/communities/110931059460862710144'
+              to download the app from the
+              = succeed '.' do
+                = link_to 'private app store',
+                          'https://play.google.com/apps/testing/com.chrismar035.pushsomething'
+
+          %li
+            Sign into the app with your Google account.
+          %li
+            = succeed '.' do
+              = link_to 'Sign into the website',
+                        user_omniauth_authorize_path(:google_oauth2)
+
+          %li
+            = succeed '.' do
+              = link_to 'Send a test notification',
+                        receivers_path
+            %p
+              If your device is registered correctly, you will see a
+              notification in your device's tray.
+
+        %h2 But that's not all!
+        %p
+          The real magic of PushSomething comes when you have more than one
+          device registered. After registering your second device (or more!)
+          and a notification is sent to your account, you will see the
+          notification on each of your devices. However,
+          %span{ style: 'font-weight:bold' } unlike other apps
+          when you activate or dismiss the notification on one device, we don't
+          simply keep the notification around on your other devices.
+
+        %p
+          When a notification is dismissed on any device, we sync that with all
+          of your other devices and automatically dismiss the notification there
+          as well. No more sifting through piles of duplicate notifications on
+          all of your devices. See it once and move on with your life!
+
       .content#api
         %h2 Service API
         %p
@@ -18,3 +62,33 @@
           PushSomething for the purpose of posting notifications to devices.
           The service API allows already registered services to create
           notifications with an HTTP POST as described below.
+
+        %h3 Service Token
+        %p
+          Service tokens are generated per user to uniquely identify a user and
+          a service. If you are developing an application to post notifications
+          to PushSomething on behalf of users, you should allow your users to
+          configure their own token for your service. That way, PushSomething
+          can identify the user and your application uniquely.
+
+        %h3 API Endpoint
+        %pre.panel
+          http://pushsomething.com/api/v1
+
+        %h3
+          %span.label.radius POST
+          Notification
+
+        %pre.panel
+          \/notifications
+
+        %pre.panel
+          = preserve do
+            :escaped
+              {
+                "token": "<service token>",
+                "notification": {
+                  "title": "VIA API",
+                  "body": "This was sent through the PushSomething service API"
+                }
+              }

@@ -72,5 +72,9 @@ en:
     notifications: Notifications
     receivers: Receivers
     services: Services
+    docs: Docs
   footer:
     copyright: Copyright
+  docs:
+    getting_started: Getting Started
+    api: API

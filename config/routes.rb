@@ -22,6 +22,7 @@ PushRails::Application.routes.draw do
   get '/facebook/show', to: 'facebook#show', as: :show_facebook
 
   resources :welcome, only: [:index]
+  get '/docs', to: 'welcome#docs', as: :docs
   root to: 'welcome#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

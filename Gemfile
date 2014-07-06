@@ -6,6 +6,8 @@ gem 'capistrano', '~> 2.0'
 
 gem 'unicorn'
 gem 'pg'
+gem 'sidekiq'
+gem 'capistrano-sidekiq'
 
 group :test do
   gem 'rspec-rails'

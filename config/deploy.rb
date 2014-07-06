@@ -1,6 +1,7 @@
 require 'bundler/capistrano'
 require './config/boot'
 require 'airbrake/capistrano'
+require 'capistrano/sidekiq'
 
 
 set :application, 'push_something'

@@ -18,6 +18,11 @@ PushRails::Application.routes.draw do
     end
   end
 
+  require 'sidekiq/web'
+  authenticate :user, -> (u) { u.admin? } do
+    mount Sidekiq::Web => '/jobs'
+  end
+
   post '/facebook', to: 'facebook#create', as: :create_facebook
   get '/facebook/show', to: 'facebook#show', as: :show_facebook
 

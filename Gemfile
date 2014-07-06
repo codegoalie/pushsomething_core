@@ -7,6 +7,11 @@ gem 'capistrano', '~> 2.0'
 gem 'unicorn'
 gem 'pg'
 
+gem 'sidekiq'
+gem 'capistrano-sidekiq'
+gem 'sinatra', '>= 1.3.0', require: nil
+gem 'sprockets'
+
 group :test do
   gem 'rspec-rails'
 end

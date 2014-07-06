@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218041034) do
+ActiveRecord::Schema.define(version: 20140706212301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,15 +54,16 @@ ActiveRecord::Schema.define(version: 20140218041034) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name",                      default: "", null: false
-    t.string   "email",                     default: "", null: false
-    t.string   "encrypted_password",        default: "", null: false
+    t.string   "name",                      default: "",    null: false
+    t.string   "email",                     default: "",    null: false
+    t.string   "encrypted_password",        default: "",    null: false
     t.datetime "remember_created_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "facebook_uid"
     t.string   "facebook_token"
     t.integer  "facebook_token_expires_at"
+    t.boolean  "admin",                     default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

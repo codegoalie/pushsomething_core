@@ -8,6 +8,7 @@ gem 'unicorn'
 gem 'pg'
 
 gem 'sidekiq'
+gem 'sidetiq'
 gem 'capistrano-sidekiq'
 gem 'sinatra', '>= 1.3.0', require: nil
 gem 'sprockets'

@@ -1,5 +1,6 @@
 Airbrake.configure do |config|
-  config.api_key = 'c5abef747faf83ebe799e804c215ed8b'
+  config.api_key = ENV['AIRBRAKE_API_KEY']
+end
 
 # Airbrake error catching for Sidekiq workers
 Sidekiq.configure_server do |config|

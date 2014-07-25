@@ -11,7 +11,7 @@ gem 'sidekiq'
 gem 'sidetiq'
 gem 'capistrano-sidekiq'
 gem 'sinatra', '>= 1.3.0', require: nil
-gem 'sprockets'
+gem 'sprockets', '2.11.0'
 
 group :test do
   gem 'rspec-rails'

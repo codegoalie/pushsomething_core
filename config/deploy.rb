@@ -1,8 +1,8 @@
 require 'bundler/capistrano'
 require './config/boot'
 require 'airbrake/capistrano'
-require 'capistrano/sidekiq'
 
+set :sidekiq_tag, nil
 
 set :application, 'push_something'
 set :repository,  'git@github.com:chrismar035/pushsomething_core.git'
